@@ -5,6 +5,7 @@
 import uuid
 from datetime import datetime
 from models import storage
+import models
 
 class BaseModel:
     """
@@ -51,3 +52,5 @@ class BaseModel:
             update the upadated_at in the current date time
         """
         self.updated_at = datetime.now()
+        models.storage.new(self)
+        models.storage.save()
