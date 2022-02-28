@@ -23,10 +23,10 @@ class FileStorage:
             set new obj
         """
         key = "{}.{}".format(type(self).__name__, self.id)
-        FileStorage.__objects = obj
+        FileStorage.__objects[key] = obj
     
     def save(self):
         """
             save to the json file
         """
-        
+
