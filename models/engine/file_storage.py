@@ -2,8 +2,9 @@
 """ storage Module """
 
 import json
-from datetime import datetime 
-from models.base_model import BaseModel
+from datetime import datetime
+from shutil import ExecError 
+from models import *
 
 class FileStorage:
     """
@@ -29,4 +30,16 @@ class FileStorage:
         """
             save to the json file
         """
+        with open(self.__file_path, "a+") as file:
+            json.dump(self.objects, file)
 
+    def reload(self):
+        """
+            raise json file
+        """
+        try:
+            f = open(self.file_path, "r")
+            self.__objects = json.load(f)
+
+        except Exception as f:
+            pass
