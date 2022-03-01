@@ -3,7 +3,7 @@
 
 import json
 from datetime import datetime
-from shutil import ExecError 
+from shutil import ExecError
 from models import *
 
 class FileStorage:
@@ -23,23 +23,25 @@ class FileStorage:
         """
             set new obj
         """
-        key = "{}.{}".format(type(self).__name__, self.id)
-        FileStorage.__objects[key] = obj
+        key = "{}.{}".format(obj.__class__.__name__, obj.id)
+        FileStorage.__objects[key] = obj.to_dict()
     
     def save(self):
         """
             save to the json file
         """
-        with open(self.__file_path, "a+") as file:
-            json.dump(self.objects, file)
+        with open(self.__file_path, 'w+') as fp:
+            ln = json.dumps(FileStorage.__objects)
+            fp.writelines(ln)
+        fp.close
 
     def reload(self):
         """
             raise json file
         """
         try:
-            f = open(self.file_path, "r")
-            self.__objects = json.load(f)
-
-        except Exception as f:
+            with open(self.__file_path) as fp:
+                fn = fp.read()
+                FileStorage.__objects = json.loads(fn)
+        except:
             pass
