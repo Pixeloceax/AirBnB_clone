@@ -43,7 +43,7 @@ class HBNBCommand(cmd.Cmd):
 
     def do_show(self, arg):
         """
-
+            comment
         """
 
 
