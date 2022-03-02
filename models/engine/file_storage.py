@@ -2,9 +2,8 @@
 """ storage Module """
 
 import json
-from datetime import datetime
-from shutil import ExecError
-from models import *
+from models.user import User
+from models.base_model import BaseModel
 
 
 class FileStorage:

@@ -2,12 +2,14 @@
 """program called console.py that contains
 the entry point of the command interpreter"""
 import cmd
+import shlex
 from datetime import datetime
 import models
 from models.base_model import BaseModel
-import shlex
+from models.user import User
 
-classes_verif = {"BaseModel": BaseModel}
+
+classes_verif = {"BaseModel": BaseModel, "User": User}
 
 
 class HBNBCommand(cmd.Cmd):
