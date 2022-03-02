@@ -6,6 +6,7 @@ from datetime import datetime
 from models import storage
 import models
 
+
 class BaseModel:
     """
         class for object hierarchy
@@ -35,7 +36,8 @@ class BaseModel:
         """
             return string represantation of an istance
         """
-        return("[{}] ({}) {}").format(type(self).__name__,self.id,self.__dict__)
+        return("[{}] ({}) {}").format(type(self).__name__,
+                                      self.id, self.__dict__)
 
     def to_dict(self):
         """
@@ -46,7 +48,7 @@ class BaseModel:
         my_dictionary["created_at"] = my_dictionary["created_at"].isoformat()
         my_dictionary["updated_at"] = my_dictionary["updated_at"].isoformat()
         return my_dictionary
-    
+
     def save(self):
         """
             update the upadated_at in the current date time
