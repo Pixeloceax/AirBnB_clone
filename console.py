@@ -55,6 +55,7 @@ class HBNBCommand(cmd.Cmd):
 
         if len(spliting) == 0:
             print("** class name missing **")
+            return False
 
         if spliting[0] in classes_verif:
 
@@ -82,6 +83,12 @@ class HBNBCommand(cmd.Cmd):
         """
         
         """
+        spliting = shlex.split(arg)
+        if spliting[0] in classes_verif:
+            if key in models.storage.all():
+                print(models.storage.all())
+        else:
+            print("** class doesn't exist **")
 
 
     def do_update(self, arg):    
