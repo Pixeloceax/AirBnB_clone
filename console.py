@@ -46,10 +46,10 @@ class HBNBCommand(cmd.Cmd):
         except NameError:
             print("** class doesn't exist **")
 
-
     def do_show(self, arg):
         """
-            Prints the string representation of an instance based on the class name and id
+            Prints the string representation of
+            an instance based on the class name and id
         """
         spliting = shlex.split(arg)
 
@@ -78,23 +78,38 @@ class HBNBCommand(cmd.Cmd):
         """
 
         """
-        
+
     def do_all(self, arg):
         """
-        
+            Prints all string representation of
+            all instances based or not on the class name
         """
         spliting = shlex.split(arg)
-        if spliting[0] in classes_verif:
-            if key in models.storage.all():
-                print(models.storage.all())
+        obj_list = []
+
+        if len(spliting) == 0:
+            for value in models.storage.all().values():
+                obj_list.append(str(value))
+
+            print("".join(obj_list), end="")
+            print("")
+
+        elif spliting[0] in classes_verif:
+            for key in models.storage.all():
+                if spliting[0] in key:
+                    obj_list.append(str(models.storage.all()[key]))
+
+            print("".join(obj_list), end="")
+            print("")
+
         else:
             print("** class doesn't exist **")
 
+    def do_update(self, arg):
+        """
 
-    def do_update(self, arg):    
         """
-        
-        """
+
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
