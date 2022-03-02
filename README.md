@@ -4,7 +4,7 @@ We have recreated the console of the AirBnB site
 
 ## 
 
-![HBNB](65f4a1dd9c51265f49d0.png)  
+![HBNB](/screen/65f4a1dd9c51265f49d0.png)  
 
 # Documentation
 
@@ -18,7 +18,7 @@ We have recreated the console of the AirBnB site
   -
   -
 
-  ![HBNB BP](815046647d23428a14ca.png)
+  ![HBNB BP](/screen/815046647d23428a14ca.png)
 
 # Usage/Examples
 
