@@ -4,7 +4,7 @@ We have recreated the console of the AirBnB site
 
 ## 
 
-![HBNB](https://holbertonintranet.s3.amazonaws.com/uploads/medias/2018/6/65f4a1dd9c51265f49d0.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOU5BHMTQX4%2F20220302%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20220302T080335Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=7109d657b7a9354aca581991794858cf0f9fe1eda6599b6041e0d859495170e9)
+![](https://holbertonintranet.s3.amazonaws.com/uploads/medias/2018/6/65f4a1dd9c51265f49d0.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOU5BHMTQX4%2F20220302%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20220302T080335Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=7109d657b7a9354aca581991794858cf0f9fe1eda6599b6041e0d859495170e9)
 
 # Documentation
 
@@ -18,7 +18,7 @@ We have recreated the console of the AirBnB site
   -
   -
 
-  ![HBNB](https://holbertonintranet.s3.amazonaws.com/uploads/medias/2018/6/815046647d23428a14ca.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOU5BHMTQX4%2F20220302%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20220302T080335Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=d10bf5c7111c5921b1d63aee824e06db6e87cca61ed962d53310e3bbfd36a78d)
+  ![](https://holbertonintranet.s3.amazonaws.com/uploads/medias/2018/6/815046647d23428a14ca.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOU5BHMTQX4%2F20220302%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20220302T080335Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=d10bf5c7111c5921b1d63aee824e06db6e87cca61ed962d53310e3bbfd36a78d)
 
 # Usage/Examples
 
