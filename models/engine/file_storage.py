@@ -6,6 +6,7 @@ from datetime import datetime
 from shutil import ExecError
 from models import *
 
+
 class FileStorage:
     """
         class for object storage
@@ -13,19 +14,19 @@ class FileStorage:
     __file_path = "file.json"
     __objects = {}
 
-    def all(self): 
+    def all(self):
         """
             return the dictionary object
         """
         return FileStorage.__objects
-    
+
     def new(self, obj):
         """
             set new obj
         """
         key = "{}.{}".format(obj.__class__.__name__, obj.id)
         FileStorage.__objects[key] = obj.to_dict()
-    
+
     def save(self):
         """
             save to the json file
@@ -43,5 +44,5 @@ class FileStorage:
             with open(self.__file_path) as fp:
                 fn = fp.read()
                 FileStorage.__objects = json.loads(fn)
-        except:
+        except Exception:
             pass
