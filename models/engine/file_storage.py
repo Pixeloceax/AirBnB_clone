@@ -29,24 +29,28 @@ class FileStorage:
             set new obj
         """
         key = "{}.{}".format(obj.__class__.__name__, obj.id)
-        FileStorage.__objects[key] = obj.to_dict()
+        FileStorage.__objects[key] = obj
 
     def save(self):
         """
             save to the json file
         """
+        new_dict = {}
+        for key, value in FileStorage.__objects.items():
+            new_dict[key] = value.to_dict()
+
         with open(self.__file_path, 'w+') as fp:
-            ln = json.dumps(FileStorage.__objects)
+            ln = json.dumps(new_dict)
             fp.writelines(ln)
-        fp.close
 
     def reload(self):
         """
             raise json file
         """
         try:
-            with open(self.__file_path) as fp:
-                fn = fp.read()
-                FileStorage.__objects = json.loads(fn)
-        except Exception:
+            with open(self.__file_path, 'w+') as fp:
+                dict_new = json.load(fp)
+            for key, value in dict_new:
+                FileStorage.__objects[key] = eval(value[__class__])(**value)
+        except:
             pass

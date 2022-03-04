@@ -3,8 +3,8 @@
 the entry point of the command interpreter"""
 import cmd
 import shlex
+from models import storage
 from datetime import datetime
-import models
 from models.base_model import BaseModel
 from models.user import User
 from models.state import State
@@ -69,8 +69,8 @@ class HBNBCommand(cmd.Cmd):
             if len(spliting) > 1:
                 key = spliting[0] + '.' + spliting[1]
 
-                if key in models.storage.all():
-                    print(models.storage.all()[key])
+                if key in storage.all():
+                    print(storage.all()[key])
 
                 else:
                     print("** no instance found **")
@@ -96,9 +96,9 @@ class HBNBCommand(cmd.Cmd):
             if len(split_arg) > 1:
                 key = split_arg[0] + '.' + split_arg[1]
 
-                if key in models.storage.all():
-                    models.storage.all().pop(key)
-                    models.storage.save()
+                if key in storage.all():
+                    storage.all().pop(key)
+                    storage.save()
 
                 else:
                     print(" no instance found ")
@@ -118,16 +118,16 @@ class HBNBCommand(cmd.Cmd):
         obj_list = []
 
         if len(spliting) == 0:
-            for value in models.storage.all().values():
+            for value in storage.all().values():
                 obj_list.append(str(value))
 
             print("".join(obj_list), end="")
             print("")
 
         elif spliting[0] in classes_verif:
-            for key in models.storage.all():
+            for key in storage.all():
                 if spliting[0] in key:
-                    obj_list.append(str(models.storage.all()[key]))
+                    obj_list.append(str(storage.all()[key]))
 
             print("".join(obj_list), end="")
             print("")

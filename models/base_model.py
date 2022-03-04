@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 """ Base Module """
 
+import uuid
 from datetime import datetime
 import models
-import uuid
 
 
 class BaseModel:
