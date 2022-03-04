@@ -179,7 +179,7 @@ class HBNBCommand(cmd.Cmd):
             retrieve the number of instances of a class
         """
         counter = 0
-        for key in models.storage.all().keys():
+        for key in storage.all().keys():
             if arg in key:
                 counter += 1
         print(counter)
