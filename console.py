@@ -140,6 +140,50 @@ class HBNBCommand(cmd.Cmd):
 
         """
 
+    def default(self, arg):
+        """
+            retrieve all instances of a class by using multiple options
+        """
+        spliting = arg.split('.')
+        test = spliting[1]
+        test = test.split("\"")
+        all = "all()"
+        count = "count()"
+        show = "show("
+        destroy = "destroy("
+        try:
+            if spliting[1] == all:
+                self.do_all(spliting[0])
+        except Exception:
+            pass
+        try:
+            if spliting[1] == count:
+                self.do_count(spliting[0])
+        except Exception:
+            pass
+        try:
+            if test[0] == show:
+                arguments = spliting[0] + " " + test[1]
+                self.do_show(arguments)
+        except Exception:
+            pass
+        try:
+            if test[0] == destroy:
+                arguments = spliting[0] + " " + test[1]
+                self.do_destroy(arguments)
+        except Exception:
+            pass
+
+    def do_count(self, arg):
+        """
+            retrieve the number of instances of a class
+        """
+        counter = 0
+        for key in models.storage.all().keys():
+            if arg in key:
+                counter += 1
+        print(counter)
+
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
