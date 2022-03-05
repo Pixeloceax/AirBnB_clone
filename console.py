@@ -142,8 +142,6 @@ class HBNBCommand(cmd.Cmd):
         """
             comment
         """
-        
-            
 
     def default(self, arg):
         """
