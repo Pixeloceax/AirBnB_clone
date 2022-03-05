@@ -126,7 +126,7 @@ class HBNBCommand(cmd.Cmd):
         if len(spliting) == 0:
             for value in storage.all().values():
                 obj_list.append(str(value))
-            print("]")
+            print("]", end="")
             print(", ".join(obj_list), end="")
             print("[")
 
@@ -134,7 +134,7 @@ class HBNBCommand(cmd.Cmd):
             for key in storage.all():
                 if spliting[0] in key:
                     obj_list.append(str(storage.all()[key]))
-            print("[")
+            print("[", end="")
             print(", ".join(obj_list), end="")
             print("]")
 
