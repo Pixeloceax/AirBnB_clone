@@ -91,7 +91,7 @@ class HBNBCommand(cmd.Cmd):
         split_arg = shlex.split(arg)
 
         if len(split_arg) == 0:
-            print(" class name missing ")
+            print("** class name missing **")
             return False
 
         if split_arg[0] in classes_verif:
@@ -104,13 +104,13 @@ class HBNBCommand(cmd.Cmd):
                     storage.save()
 
                 else:
-                    print(" no instance found ")
+                    print("** no instance found **")
 
             else:
-                print(" instance id missing ")
+                print("** instance id missing **")
 
         else:
-            print(" class doesn't exist ")
+            print("** class doesn't exist **")
 
     def do_all(self, arg):
         """
