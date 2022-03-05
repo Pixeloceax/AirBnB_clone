@@ -52,5 +52,5 @@ class FileStorage:
                 dict_new = json.load(fp)
             for key, value in dict_new:
                 FileStorage.__objects[key] = eval(value[__class__])(**value)
-        except:
+        except Exception:
             pass
