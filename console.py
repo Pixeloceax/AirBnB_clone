@@ -142,30 +142,37 @@ class HBNBCommand(cmd.Cmd):
         """
             comment
         """
+        split_arg = shlex.split(arg)
 
-        spliting = shlex.split(arg)
-        if len(spliting) == 0:
-            print("** class name missing **")
-            return
-        if len(spliting) == 1:
-            print("** instance id missing **")
-            return
-        if len(spliting) == 2:
-            print("** attribute name missing **")
-            return
-        if len(spliting) == 3:
-            print("** value missing **")
-            return
-        if spliting[0] not in classes_verif:
-            print("** class doesn't exist **")
-            return
-        all_objs = storage.all()
-        for obj_id in all_objs.keys():
-            if obj_id == spliting[1]:
-                setattr(all_objs[obj_id], spliting[2], spliting[3])
-                storage.save()
-                return
-        print("** no instance found **")
+        if len(split_arg) == 0:
+            print(" class name missing ")
+            return False
+
+        if split_arg[0] in classes_verif:
+
+            if len(split_arg) > 1:
+                key = split_arg[0] + '.' + split_arg[1]
+
+                if key in storage.all():
+                    storage.all().pop(key)
+                    storage.save()
+
+                all_objs = storage.all()
+                for obj_id in all_objs.keys():
+                    if obj_id == split_arg[1]:
+                        setattr(all_objs[obj_id], split_arg[2], split_arg[3])
+                        storage.save()
+                        return
+
+                else:
+                    print(" no instance found ")
+
+            else:
+                print(" instance id missing ")
+
+        else:
+            print(" class doesn't exist ")
+       
 
             
 
