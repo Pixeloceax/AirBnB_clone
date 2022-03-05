@@ -145,6 +145,38 @@ class HBNBCommand(cmd.Cmd):
         """
             comment
         """
+        spliting = arg.split()
+        if len(spliting) == 0:
+            print("** class name missing **")
+            return False
+
+        if spliting[0] in classes_verif:
+
+            if len(spliting) > 1:
+                key = spliting[0] + '.' + spliting[1]
+
+                if key in storage.all():
+
+                    if len(spliting) > 2:
+
+                        if len(spliting) > 3:
+                            setattr(storage.all()[key], spliting[2], spliting[3])
+                            storage.all()[key].save()
+
+                        else:
+                            print("** value missing **")
+
+                    else:
+                        print("** attribute name missing **")
+
+                else:
+                    print("** no instance found **")
+
+            else:
+                print("** instance id missing **")
+
+        else:
+            print("** class doesn't exist **")
 
     def default(self, arg):
         """
