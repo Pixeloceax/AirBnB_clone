@@ -31,7 +31,8 @@ class BaseModel:
                     self.__dict__[key] = kwargs[key]
         else:
             self.id = str(uuid.uuid4())
-            self.created_at = self.updated_at = datetime.now()
+            self.created_at = datetime.today().isoformat()
+            self.updated_at = datetime.today().isoformat()
             models.storage.new(self)
 
     def __str__(self):
