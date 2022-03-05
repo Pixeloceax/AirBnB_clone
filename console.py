@@ -21,6 +21,9 @@ classes_verif = {"BaseModel": BaseModel, "User": User,
 
 
 class HBNBCommand(cmd.Cmd):
+    """
+        console
+    """
 
     prompt = "(hbnb) "
 
