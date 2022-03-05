@@ -5,6 +5,7 @@ import cmd
 import shlex
 from models import storage
 from datetime import datetime
+import models
 from models.base_model import BaseModel
 from models.user import User
 from models.state import State
@@ -137,8 +138,29 @@ class HBNBCommand(cmd.Cmd):
 
     def do_update(self, arg):
         """
-
+            comment
         """
+        args = arg.split()
+        kw = ".".join(args[:2])
+        if not args:
+            print("** class name missing **")
+        elif args[0] not in globals():
+            print("** class doesn't exist **")
+        elif len(args) < 2:
+            print("** instance id missing **")
+        elif ".".join(args[:2]) not in models.storage.all():
+            print("** no instance found **")
+        elif len(args) < 3:
+            print("** attribute name missing **")
+        elif len(args) < 4:
+            print("** value missing **")
+        else:
+            kw = ".".join(args[:2])
+            atributs = args[2]
+            value = args[3]
+            _dict = models.storage.all()[kw].__dict__
+            _dict[atributs] = value
+            models.storage.save()
 
     def default(self, arg):
         """
