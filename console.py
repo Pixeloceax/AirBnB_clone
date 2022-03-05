@@ -123,17 +123,17 @@ class HBNBCommand(cmd.Cmd):
         if len(spliting) == 0:
             for value in storage.all().values():
                 obj_list.append(str(value))
-
-            print("".join(obj_list), end="")
-            print("")
+            print("]")
+            print(", ".join(obj_list), end="")
+            print("[")
 
         elif spliting[0] in classes_verif:
             for key in storage.all():
                 if spliting[0] in key:
                     obj_list.append(str(storage.all()[key]))
-
-            print("".join(obj_list), end="")
-            print("")
+            print("[")
+            print(", ".join(obj_list), end="")
+            print("]")
 
         else:
             print("** class doesn't exist **")
