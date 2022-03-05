@@ -11,6 +11,9 @@ class BaseModel:
         class for object hierarchy
     """
     def __init__(self, *args, **kwargs):
+        """
+            comment
+        """
         if args is not None:
             pass
         if len(args) > 0:
