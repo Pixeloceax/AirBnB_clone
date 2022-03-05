@@ -160,7 +160,8 @@ class HBNBCommand(cmd.Cmd):
                     if len(spliting) > 2:
 
                         if len(spliting) > 3:
-                            setattr(storage.all()[key], spliting[2], spliting[3])
+                            setattr(storage.all()[key],
+                                    spliting[2], spliting[3])
                             storage.all()[key].save()
 
                         else:
