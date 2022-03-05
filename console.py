@@ -15,7 +15,9 @@ from models.place import Place
 from models.review import Review
 
 
-classes_verif = {"BaseModel": BaseModel, "User": User}
+classes_verif = {"BaseModel": BaseModel, "User": User,
+                 "State": State, "City": City,
+                 "Amenity": Amenity, "Place": Place, "Review": Review}
 
 
 class HBNBCommand(cmd.Cmd):
