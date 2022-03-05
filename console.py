@@ -202,14 +202,14 @@ class HBNBCommand(cmd.Cmd):
             pass
         try:
             if test[0] == show:
-                arguments = spliting[0] + " " + test[1]
-                self.do_show(arguments)
+                args = spliting[0] + " " + test[1]
+                self.do_show(args)
         except Exception:
             pass
         try:
             if test[0] == destroy:
-                arguments = spliting[0] + " " + test[1]
-                self.do_destroy(arguments)
+                args = spliting[0] + " " + test[1]
+                self.do_destroy(args)
         except Exception:
             pass
 
