@@ -13,7 +13,10 @@ class TestBaseModel(unittest.TestCase):
 
     def test_save(self):
         my_model = BaseModel()
-        old_updated_at = my_model.updated_at
-        sleep(0.5)
+        old_update = my_model.updated_at
+        sleep(0.01)
         my_model.save()
-        self.assertEqual(my_model.updated_at, old_updated_at)
+        self.assertNotEqual(my_model.updated_at, old_update)
+
+
+    
