@@ -14,9 +14,9 @@ We have recreated the console of the AirBnB site
 - [BaseModel](/models/base_model.py)
 - [File Storage](./models/engine/file_storage.py)
 ## test Files
-  - 
-  -
-  -
+  - [console](./tests/test_console.py)
+  - [BaseModel](./tests/test_models/test_base_model.py)
+  - [File Storage](./tests/test_models/test_engine/test_file_storage.py)
 
   ![HBNB BP](/screen/815046647d23428a14ca.png)
 
@@ -38,7 +38,11 @@ We have recreated the console of the AirBnB site
 To run tests, run the following command
 
 ```
-  ** to do **
+    python3 -m unittest tests/test_console.py
+
+    python3 -m unittest tests/test_models/test_base_model.py
+
+    python3 -m unittest tests/test_models/test_engine/test_file_storage.py
 ```
 
 ## Authors
