@@ -55,6 +55,11 @@
     font-size: 14px;
 }
 
+.popover{
+	position: relative;
+  	z-index: 3; 
+}
+
 .locations .popover {
     visibility: hidden;
     background-color: #fafafa;
