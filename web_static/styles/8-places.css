@@ -1,0 +1,44 @@
+.places h1{
+    margin-left: 10px;
+    font-size: 30px;
+}
+
+article h2{
+    font-size: 30px;
+    margin-top: 0;
+    width: 390px;
+    padding: 20px;
+    margin: 20px;
+    border: #FF5A5F solid 1px; 
+    border-radius: 4px;
+    text-align: center;
+}
+
+.home{
+    display: flex;
+    float: left;
+    margin-left: 25px;
+}
+
+.house{
+    display: flex;
+    
+}
+
+.suite{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.price_by_night{
+    color: #FF5A5F;
+    border: #FF5A5F solid 4px;
+    border-radius: 50%;
+    min-width: 60px;
+    height: 60px;
+    font-size: 30px;
+    text-align: center;   
+}
