@@ -1,9 +1,11 @@
+
 .places h1{
     margin-left: 10px;
     font-size: 30px;
 }
 
 article {
+    
     font-size: 30px;
     margin-top: 0;
     width: 390px;
@@ -33,7 +35,6 @@ article h2
     align-items: center;
     text-align: center;
     margin-left: 4%;
-    left: 0.5%;
 }
 
 .house{
@@ -42,7 +43,7 @@ article h2
     justify-content: center;
     align-items: center;
     text-align: center;
-    left: 3%;
+    margin-left: auto;
 }
 
 .suite{
@@ -52,6 +53,7 @@ article h2
     align-items: center;
     text-align: center;
     margin: auto;
+    
 }
 
 .price_by_night{
