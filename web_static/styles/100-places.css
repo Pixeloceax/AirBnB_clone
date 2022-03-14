@@ -116,14 +116,25 @@ article h2
     font-size: 50%;
 }
 
- .amenities {
+.amenities {
     margin-top: 40px;
+    margin: 0;
 }
 
 .amenities h2 {
     text-align: left;
     font-size: 16px;
     border-bottom: solid #DDDDDD 1px;
+}
+
+
+.amenities ul{
+    padding: 0;
+    margin: 0;
+}
+
+.amenities li {
+    font-size: 16px;
 }
 
 .tv, .wifi, .pets{
@@ -135,6 +146,10 @@ article h2
     display: inline-block;
 	width: 50px;
 	height: 50px;
+    background-size: 60%;
+    display: flow-root;
+    margin-bottom: 0;
+    padding: 0;
 }
     
 
@@ -150,12 +165,8 @@ article h2
     background-image: url("../images/icon_pets.png");
 }
 
-.amenities li {
-    font-size: 16px;
-}
-
 .reviews{
-    
+    text-align: left;
     margin-top: 40px;
 }
 
@@ -171,4 +182,15 @@ article h2
 
 .reviews p{
     font-size: 12px;
+}
+
+.reviews ul{
+    padding-left: 0px;
+    padding-bottom: 0px;
+    margin-top: 0px;
+
+}
+
+.tv p, .wifi p, .pets p{
+    margin-left: 55px;
 }
